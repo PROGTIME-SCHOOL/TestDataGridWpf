@@ -19,3 +19,5 @@ C:\Users\viosagmir\source\repos\TestDataGridWpf\TestDataGridWpf\obj\Debug\net6.0
 C:\Users\viosagmir\source\repos\TestDataGridWpf\TestDataGridWpf\obj\Debug\net6.0-windows\TestDataGridWpf.pdb
 C:\Users\viosagmir\source\repos\TestDataGridWpf\TestDataGridWpf\obj\Debug\net6.0-windows\TestDataGridWpf.genruntimeconfig.cache
 C:\Users\viosagmir\source\repos\TestDataGridWpf\TestDataGridWpf\obj\Debug\net6.0-windows\ref\TestDataGridWpf.dll
+C:\Users\viosagmir\source\repos\TestDataGridWpf\TestDataGridWpf\obj\Debug\net6.0-windows\SignInWindow.g.cs
+C:\Users\viosagmir\source\repos\TestDataGridWpf\TestDataGridWpf\obj\Debug\net6.0-windows\SignInWindow.baml

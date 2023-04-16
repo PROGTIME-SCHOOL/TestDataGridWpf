@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestDataGridWpf.Classes;
+using TestDataGridWpf.Models;
 
 namespace TestDataGridWpf
 {
@@ -23,11 +25,46 @@ namespace TestDataGridWpf
         public MainWindow()
         {
             InitializeComponent();
+
+            SignInWindow signInWindow = new SignInWindow(this);
+            signInWindow.Show();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            List<User> users = DataAccess.GetUsers();
+            usersDataGrid.ItemsSource = users;
 
+            petsDataGrid.ItemsSource = users.First().Pets;
+        }
+
+        private void usersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var user = usersDataGrid.SelectedItem as User;
+            if (user != null)
+            {
+                petsDataGrid.ItemsSource = user.Pets;
+            }
+        }
+
+        private void petsDataGrid_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)
+        {
+
+        }
+
+        private void petsDataGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            var result = MessageBox.Show("Save?", "Saving", MessageBoxButton.OKCancel);
+            
+
+            if (result == MessageBoxResult.OK)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }

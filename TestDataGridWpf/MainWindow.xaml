@@ -7,6 +7,29 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid Name="usersDataGrid"/>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <DataGrid Name="usersDataGrid" AutoGenerateColumns="False"
+                  IsReadOnly="True" CanUserAddRows="False"
+                  SelectionChanged="usersDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="*" />
+                <DataGridTextColumn Header="Nmae" Binding="{Binding Name}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Grid.Column="1" Name="petsDataGrid" AutoGenerateColumns="False"
+                  IsReadOnly="False" CanUserAddRows="False" Background="LightBlue"
+                  BeginningEdit="petsDataGrid_BeginningEdit"
+                  CellEditEnding="petsDataGrid_CellEditEnding">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" Width="*" />
+                <DataGridTextColumn Header="Nmae" Binding="{Binding Name}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
